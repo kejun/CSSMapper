@@ -1,0 +1,1172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <title>
+口袋唱片 (豆瓣)
+</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT" />
+    
+    <script type="text/javascript" src="http://otho.douban.com/js/packed_jquery0.js"></script>
+    <script type="text/javascript" src="http://otho.douban.com/js/packed_jquery.suggest1.js"></script>
+    <link rel="shortcut icon" href="http://t.douban.com/favicon.ico" type="image/x-icon" />
+    <link href="http://otho.douban.com/css/packed_douban179.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://otho.douban.com/js/packed_douban53.js"></script>
+    
+<script type="text/javascript" src="/js/swfobject.js"></script>
+<script type="text/javascript" src="/js/artist30789.js"></script>
+
+<script type="text/javascript">
+Douban.init_add_video = function(o) {
+    $(o).click(function(){
+        url = "/j/label/pocketrecords/add_video";
+        $.postJSON_withck(url, {}, function(r){
+                show_dialog(r.html);
+                load_event_monitor($('#dialog'));
+            });
+        return false;
+    });
+}
+
+Douban.init_edit_video = function(o) {
+    $(o).click(function(){
+        vid = $(o).attr("id");
+        url = "/j//label/pocketrecords/add_video";
+        $.postJSON_withck(url, {id: vid}, function(r){
+                show_dialog(r.html);
+                load_event_monitor($('#dialog'));
+            });
+        return false;
+    });
+}
+
+Douban.init_submit_add_video = function(o) {
+    o.onsubmit = function(){
+        remote_submit_json(this, function(r){
+            $(o).parent().html(r.html);
+            load_event_monitor($('#dialog'));
+            refine_dialog();
+            if(r.statu == "ok")
+            {
+                setTimeout(function(){
+                    $('#dialog, #overlay').fadeOut(close_dialog);
+                    document.location.reload();
+                },400);
+            }
+            });
+        return false;
+    }
+}
+</script>
+
+<link rel="alternate" href="/feed/label/pocketrecords/miniblogs" type="application/rss+xml" title="口袋唱片的广播" />
+<style type="text/css">
+    .actfromfri .event_long{width:65%}
+    #album{overflow:hidden;width:100%;}
+</style>
+
+
+
+
+    <style type="text/css"></style>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div id="wrapper">
+        
+    
+<div id="header">
+<form id="ssform" name="ssform" method="get" action="/subject_search">
+    
+    
+    <a href="http://www.douban.com" title="豆瓣"><img src="http://t.douban.com/pics/logosmall.gif" alt="douban" class="logo"/></a>
+    <div id="nav">
+            <a  href="/"><span>首页</span></a>
+            <a  href="/mine/"><span>我的豆瓣</span></a>
+            <a  href="/contacts/"><span>友邻</span></a>
+            <a  href="/group/"><span>小组</span></a>
+            <a  href="/book/"><span>读书</span></a>
+            <a  href="/movie/"><span>电影</span></a>
+            <a class="now" href="/music/"><span>音乐</span></a>
+            <a  href="/event/"><span>同城</span></a>
+        <a target="_blank" href="http://9.douban.com" class="nine_nav">九点</a>
+    </div>
+    
+
+<div id="searbar">
+    <span>
+        <a class="arrow" href="javascript:void(0)"><img src="http://t.douban.com/pics/down.gif" class="down"/><img src="http://t.douban.com/pics/up.gif" class="up"/></a>
+        <div id="dsearch" class="hidesub">
+                <a href="/subject_search?cat=1001">书籍</a>
+                <a href="/subject_search?cat=1002">电影</a>
+                <a href="/subject_search?cat=1003">音乐</a>
+            <a href="/group/search">小组</a>
+            <a href="/people_search">成员</a>
+            <a href="/event/search">活动</a>
+        </div>
+    </span>
+    <span class="submit"><input class="butt" type="submit" value="搜索"/></span>
+    <span><input class="j a_search_text" name="search_text" title="书籍、电影、音乐" type="text" size="22" maxlength="60" value="" id="page_focus"/></span>
+    <script type="text/javascript">
+        Douban.prettify_form(document.getElementById('ssform'));
+    </script>
+</div>
+<div class="clear"></div>
+
+
+    
+    <div id="status">
+        <div id="subnav">
+            
+    <a href="/music/mine/">我的音乐</a> <a href="/music/recommended">豆瓣猜</a> <a href="/music/review/best/">热评</a> <a href="/music/chart">排行榜</a> <a href="/music/tag/">分类浏览</a> <a href="/artist/">音乐人</a> <a href="http://douban.fm" target="_blank">电台<img src="http://t.douban.com/pics/new_menu.gif" style="margin-top:4px;*margin-top:2px;position:absolute;"></img></a> 
+
+        </div>
+
+        
+            <a href="/doumail/">豆邮<span style="color:#006600;">(106)</span></a>
+            <a href="/settings/">kejun的设置</a>
+            
+
+            <a href="/logout?ck=fwNz">退出</a>
+        <div class="clear"></div>
+    </div>
+
+</form>
+</div>
+
+        
+    <div id="content">
+    
+
+<h1>
+口袋唱片
+</h1>
+
+    <div class="grid-16-8 clearfix">
+        <div class="article">
+<script type="text/javascript">
+static_ver="30789"
+
+artist_url="/j/label/pocketrecords/"
+</script>
+
+
+
+
+
+<div id="artist_info">
+<table class="infobox" width="100%">
+    <tr><td class="tablelt"></td><td class="tablect"></td><td class="tablert"></td></tr>
+    <tr><td class="tablelc"></td><td class="tablecc">
+<div style="position: relative;margin-right:20px" class="ll"><img src=http://t.douban.com/icon/ul102413-1.jpg></div>
+
+    <span class="pl">旗下成员</span>：
+
+<a href='/artist/Tamas/'>Tamas Wells</a> / <a href='/artist/Maximilian/'>麦斯米兰</a> / <a href='/artist/chrisgarneau/'>Chris Garneau</a> / <a href='/artist/Club8/'>Club 8</a> <br/>
+    <span class="pl">所属公司</span>：声演坊 口袋唱片 <br/>
+    
+
+    
+    <span class="pl">风　　格</span>：
+        <a href="/labels/tag/%E6%B8%85%E6%96%B0%E9%9F%B3%E4%B9%90">清新音乐</a>
+        <a href="/labels/tag/%E6%B0%91%E8%B0%A3">民谣</a>
+    <br/>
+
+
+
+
+<div style="height:1px;font-size:1px;line-height:1px;border-bottom:1px dashed #ddd;margin-left:180px;margin-top:5px;margin-bottom:5px"></div>
+
+<span class="pl">官方网址</span>：<br/>【关于我们】<br/>北京声演坊文化传播有限公司<br/>下属品牌 口袋唱片<br/>策划国内外音乐演出，出版唱片/杂志/图书，以及其他众多音乐服务.<br/>官方博客：<a href="http://blog.sina.com.cn/u/1496908703" target="_blank" rel="nofollow">http://blog.sina.com<wbr/>.cn/u/1496908703</a><br/>豆瓣主办方：<a href="http://www.douban.com/host/Soundbloom/">http://www.douban.co<wbr/>m/host/Soundbloom/</a><br/>淘宝店：<a href="http://shop33254589.taobao.com/" target="_blank" rel="nofollow">http://shop33254589.<wbr/>taobao.com/</a><br/>豆瓣音乐厂牌：<a href="http://www.douban.com/artist/pocketrecords/">http://www.douban.co<wbr/>m/artist/pocketrecor<wbr/>ds/</a><br/>豆瓣小组：<a href="http://www.douban.com/group/pocketmusic/">http://www.douban.co<wbr/>m/group/pocketmusic/<wbr/></a><br/>【所属音乐人】<br/>1.Tamas Wells<a href="http://www.douban.com/artist/Tamas/">http://www.douban.co<wbr/>m/artist/Tamas/</a><br/>2.麦斯米兰 Maximilian Hecker<a href="http://www.douban.com/artist/Maximilian/">http://www.douban.co<wbr/>m/artist/Maximilian/<wbr/></a><br/>3.Chris Garneau <a href="http://www.douban.com/artist/chrisgarneau/">http://www.douban.co<wbr/>m/artist/chrisgarnea<wbr/>u/</a><br/>4.Russian Red 俄国红小姐 <a href="http://www.douban.com/artist/russianred/">http://www.douban.co<wbr/>m/artist/russianred/<wbr/></a><br/>5.Club 8 <a href="http://www.douban.com/artist/Club8/">http://www.douban.co<wbr/>m/artist/Club8/</a><br/>6.梦的雅朵 Mondialito <a href="http://www.douban.com/artist/mondialito/">http://www.douban.co<wbr/>m/artist/mondialito/<wbr/></a><br/>7.熊宝贝 <a href="http://www.douban.com/artist/xiongbaobei/">http://www.douban.co<wbr/>m/artist/xiongbaobei<wbr/>/</a><br/>8.Pelle Carlberg <a href="http://www.douban.com/artist/pellecarlberg/">http://www.douban.co<wbr/>m/artist/pellecarlbe<wbr/>rg/</a><br/>9.the do <a href="http://www.douban.com/artist/thedoband/">http://www.douban.co<wbr/>m/artist/thedoband/</a><br/>10.杨千墀 <a href="http://www.douban.com/artist/kurtyqc/">http://www.douban.co<wbr/>m/artist/kurtyqc/</a><br/>11.吴雪颖 <a href="http://www.douban.com/artist/ecke/">http://www.douban.co<wbr/>m/artist/ecke/</a><br/>12.Brazzaville 布拉柴维尔 <a href="http://www.douban.com/artist/Brazzaville/">http://www.douban.co<wbr/>m/artist/Brazzaville<wbr/>/</a><br/>13.Luigi Rubino <a href="http://www.douban.com/artist/luigirubino/">http://www.douban.co<wbr/>m/artist/luigirubino<wbr/>/</a><br/>14.ASHRAM <a href="http://www.douban.com/artist/ashram/">http://www.douban.co<wbr/>m/artist/ashram/</a><br/>15.Cuba Is Japan <a href="http://www.douban.com/artist/cubaisjapan/">http://www.douban.co<wbr/>m/artist/cubaisjapan<wbr/>/</a><br/>16.Bang Gang <a href="http://www.douban.com/artist/banggang/">http://www.douban.co<wbr/>m/artist/banggang/</a><br/>17.The Steadfast Shepherd <a href="http://www.douban.com/artist/Shepherd/">http://www.douban.co<wbr/>m/artist/Shepherd/</a><br/>18.Agnes Kain <a href="http://www.douban.com/artist/agneskain/">http://www.douban.co<wbr/>m/artist/agneskain/</a><br/>19.Angie Hart （Frent ！主唱）<a href="http://www.douban.com/artist/angiehart/">http://www.douban.co<wbr/>m/artist/angiehart/</a><br/>20.Ataraxia <a href="http://www.douban.com/artist/ataraxia/">http://www.douban.co<wbr/>m/artist/ataraxia/</a><br/>21.Peppermoon胡椒月亮<a href="http://www.douban.com/artist/peppermoon/">http://www.douban.co<wbr/>m/artist/peppermoon/<wbr/></a><br/>22.Neil Halstead<a href="http://www.douban.com/artist/neilhalstead/">http://www.douban.co<wbr/>m/artist/neilhalstea<wbr/>d/</a><br/>23.Frente！<a href="http://www.douban.com/artist/Frent/">http://www.douban.co<wbr/>m/artist/Frent/</a><br/>24 Edo Notarloberti <a href="http://www.douban.com/artist/EdoNotarloberti/">http://www.douban.co<wbr/>m/artist/EdoNotarlob<wbr/>erti/</a><br/>25 Epic45 <a href="http://www.douban.com/artist/Epic45/">http://www.douban.co<wbr/>m/artist/Epic45/</a><br/>26 Corde Oblique <a href="http://www.douban.com/artist/CordeOblique/">http://www.douban.co<wbr/>m/artist/CordeObliqu<wbr/>e/</a><br/>27 Mark Kozelek <a href="http://www.douban.com/artist/MarkKozelek/">http://www.douban.co<wbr/>m/artist/MarkKozelek<wbr/>/</a><br/>28 Dreamend <a href="http://www.douban.com/artist/Dreamend/">http://www.douban.co<wbr/>m/artist/Dreamend/</a><br/>29 Monster Movie <a href="http://www.douban.com/artist/MonsterMovie/">http://www.douban.co<wbr/>m/artist/MonsterMovi<wbr/>e/</a><br/>30 The Swell Season <a href="http://www.douban.com/artist/Theswellseason/">http://www.douban.co<wbr/>m/artist/Theswellsea<wbr/>son/</a><br/>
+
+<span class="pl">简　　介</span>：<br/>
+<span class="short">北京声演坊文化传播有限公司 
+<br/>下属品牌 口袋唱片 
+<br/>策划国内外音乐演出，出版唱片/杂志/图书，以及其他众多音乐服务. 
+<br/>
+<br/>办公电话 座机:010-62117075 传真:010-62115117 
+<br/>手机：13426117374 
+<br/>联系...
+  <a href="javascript:void(0)" class="j a_show_full">(全部)</a>
+</span>
+<span class="all hidden">北京声演坊文化传播有限公司 
+<br/>下属品牌 口袋唱片 
+<br/>策划国内外音乐演出，出版唱片/杂志/图书，以及其他众多音乐服务. 
+<br/>
+<br/>办公电话 座机:010-62117075 传真:010-62115117 
+<br/>手机：13426117374 
+<br/>联系信箱:dakou@vip.sina.com 
+<br/>联系qq：375990887 
+<br/>口袋唱片各地分销商 
+<br/><a href="http://www.douban.com/group/topic/3688827/">http://www.douban.co<wbr/>m/group/topic/368882<wbr/>7/</a> 
+  <a href="javascript:void(0)" class="j a_show_short">(收起)</a>
+</span><br/>
+
+<br class="clear"/><br/>
+
+
+
+<div class="rr">
+    <span id="a-102413">
+    <a href="/label/pocketrecords/rec" class="j a_rec_btn " name="rbtn-a-102413-"><img src="http://t.douban.com/pics/recommend.gif" /></a></span>
+    </div>
+
+    <div class="rr">
+        <a class="j a_connect" href="/label/pocketrecords/connect?ck=fwNz">
+            <img src="http://t.douban.com/pics/add_artist.gif" alt="关注口袋唱片">
+        </a>&nbsp;&nbsp;
+    </div>
+
+
+
+
+</td><td class="tablerc"></td></tr>
+    <tr><td class="tablelb"></td><td class="tablecb"></td><td class="tablerb"></td></tr>
+    </table>
+</div>
+
+
+<br/>
+
+
+
+
+
+
+
+
+
+<div class="" id="song">
+
+
+
+
+
+    
+        <h2  >口袋唱片的音乐 &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        </h2>
+
+
+    
+
+
+<div id="mainplayer"></div>
+<script type="text/javascript">
+    var sdata = [];
+        sdata.push({
+            title : encodeURIComponent("Valder Fields"),
+            url : 'aHR0cDovL21tMS5kb3ViYW4uY29tLzIwMTAwMjAxMTQ1NC82Nzk3NTc1ODE2ZmNiOTM2YWJlYzEwZDcyY2JiNDFkOC92aWV3L211c2ljaWFubXAzL21wMy94MTAzMjA0ODQubXAz',
+            id : '16505',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent(" Lady Sleep"),
+            url : 'aHR0cDovL24uZG91YmFuLmNvbS92aWV3L211c2ljaWFubXAzL21wMy94MTAzMjA0OTgubXAzP2tleT0yMDEwMDIwMTE0NTQwNzU0YTkzMTE0OWE0ZTQ1OTBjYjgzNDYyNjE5ODAzZTg1',
+            id : '16506',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("Love In December"),
+            url : 'aHR0cDovL21tMS5kb3ViYW4uY29tLzIwMTAwMjAxMTQ1NC8zNDg5NTU2ODUwYmI1MGI3MTdmNDViNjkzOTM4ODJiYy92aWV3L211c2ljaWFubXAzL21wMy94MTAzMjA1MzIubXAz',
+            id : '16510',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("Relief"),
+            url : 'aHR0cDovL21tMS5kb3ViYW4uY29tLzIwMTAwMjAxMTQ1NC83MzkxMjQyOWJhY2ZjOTQ5YTY3MDYxMTlmNGE3ZDIyYi92aWV3L211c2ljaWFubXAzL21wMy94MTAzMjA1MDMubXAz',
+            id : '16507',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("跟谁都没有关系"),
+            url : 'aHR0cDovL24uZG91YmFuLmNvbS92aWV3L211c2ljaWFubXAzL21wMy94MTAzNTk3MTYubXAzP2tleT0yMDEwMDIwMTE0NTQwN2JlNDdmZDFjNmU3NTI0ZGIzMjQyNzg2OTk0MmIwNWFh',
+            id : '19017',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("just like an angle "),
+            url : 'aHR0cDovL21tMS5kb3ViYW4uY29tLzIwMTAwMjAxMTQ1NC8xZjJhYWMxYjlmODI1OTMxNzUzNTk2OTUzYTk5ZDNiNi92aWV3L211c2ljaWFubXAzL21wMy94MTAzNjQ1MDEubXAz',
+            id : '19367',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent(" Elizabeth"),
+            url : 'aHR0cDovL21tMS5kb3ViYW4uY29tLzIwMTAwMjAxMTQ1NC8zYzE2OTI2MTQxOGY3NDVjNjZlZWJlYjhhOWMwMmU1NS92aWV3L211c2ljaWFubXAzL21wMy94MTAzOTcxMTIubXAz',
+            id : '21540',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent(" Let the Sunshine In"),
+            url : 'aHR0cDovL24uZG91YmFuLmNvbS92aWV3L211c2ljaWFubXAzL21wMy94MTAzMjE2NDUubXAzP2tleT0yMDEwMDIwMTE0NTQwNzBjOTdjYWIzYTI0MzJjODc5MmFjNDRkMmY2ZTNmZDVl',
+            id : '16587',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("Nos ballades"),
+            url : 'aHR0cDovL24uZG91YmFuLmNvbS92aWV3L211c2ljaWFubXAzL21wMy94MTA1MDMyODYubXAzP2tleT0yMDEwMDIwMTE0NTQwNzZiOWIzNzJkNmIyYmEwMzFhZjg4ZTE3ODZiOGY4OWEx',
+            id : '28225',
+            isfull : 'True'
+        });
+        sdata.push({
+            title : encodeURIComponent("If You Want Me"),
+            url : 'aHR0cDovL24uZG91YmFuLmNvbS92aWV3L211c2ljaWFubXAzL21wMy94MTA1NjYwMzgubXAzP2tleT0yMDEwMDIwMTE0NTQwNzk5ZWUyNDllYWEzMjBjMDJmZjA1MWU4NDQ1OTllNjBj',
+            id : '32448',
+            isfull : 'True'
+        });
+</script>
+
+<table id="songlist" class="wr songlst">
+    <tr><td width="60%">歌曲</td>
+    <td width="10%" align="center" class="j a_down_title">下载</td>
+    <td width="10%">时长</td>
+    <td width="10%" nowrap="nowrap">
+        播放次数
+    </td>
+    <td width="10%" align="center">推荐</td>
+    </tr>
+
+    <tr id="tr0">
+    <td class="full">
+        <a href="./?s=16505" onclick="playsong(0);this.blur();return false">Valder Fields</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            2:40
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        929
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s16505" class="j a_rec_btn" name="rbtn-s-16505-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr1">
+    <td class="full">
+        <a href="./?s=16506" onclick="playsong(1);this.blur();return false"> Lady Sleep</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:48
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        886
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s16506" class="j a_rec_btn" name="rbtn-s-16506-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr2">
+    <td class="full">
+        <a href="./?s=16510" onclick="playsong(2);this.blur();return false">Love In December</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:39
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        803
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s16510" class="j a_rec_btn" name="rbtn-s-16510-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr3">
+    <td class="full">
+        <a href="./?s=16507" onclick="playsong(3);this.blur();return false">Relief</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:45
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        670
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s16507" class="j a_rec_btn" name="rbtn-s-16507-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr4">
+    <td class="full">
+        <a href="./?s=19017" onclick="playsong(4);this.blur();return false">跟谁都没有关系</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            5:34
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        608
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s19017" class="j a_rec_btn" name="rbtn-s-19017-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr5">
+    <td class="full">
+        <a href="./?s=19367" onclick="playsong(5);this.blur();return false">just like an angle </a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            4:37
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        475
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s19367" class="j a_rec_btn" name="rbtn-s-19367-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr6">
+    <td class="full">
+        <a href="./?s=21540" onclick="playsong(6);this.blur();return false"> Elizabeth</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            2:35
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        503
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s21540" class="j a_rec_btn" name="rbtn-s-21540-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr7">
+    <td class="full">
+        <a href="./?s=16587" onclick="playsong(7);this.blur();return false"> Let the Sunshine In</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:31
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        496
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s16587" class="j a_rec_btn" name="rbtn-s-16587-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr8">
+    <td class="full">
+        <a href="./?s=28225" onclick="playsong(8);this.blur();return false">Nos ballades</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:26
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        272
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s28225" class="j a_rec_btn" name="rbtn-s-28225-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+    <tr id="tr9">
+    <td class="full">
+        <a href="./?s=32448" onclick="playsong(9);this.blur();return false">If You Want Me</a>  </td>
+    <td align="center">
+    <td nowrap="nowrap">
+            3:48
+    </td>
+    <td align="center" nowrap="nowrap">
+        
+        57
+    </td>
+    <td align="center">
+        <a href="/people/listenpro/recs?add=s32448" class="j a_rec_btn" name="rbtn-s-32448-"><img src="http://t.douban.com/pics/recgrey.gif" alt="推荐" title="推荐"/></a>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    // playsong(0,true);
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="vote">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="video">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    
+
+<div class="" id="album">
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    
+
+<div class="" id="fans_album">
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="note">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="miniblog">
+
+
+
+
+
+    
+        <h2  >口袋唱片的广播 &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        </h2>
+
+
+<ul class="mbt"><li style="margin-top:10px;border-bottom:1px solid #ddd;"><span class="pl">1月29日</span></li><li class="mbtrmini"><span class="pl">添加了<a href="/artist/Frent/" onclick="moreurl(this,{from:'mb-271840013'})">Frente</a>、<a href="/artist/ashram/" onclick="moreurl(this,{from:'mb-271831297'})">ASHRAM</a>、<a href="/artist/xiongbaobei/" onclick="moreurl(this,{from:'mb-271829988'})">熊宝贝</a> 等 7个旗下成员</span><br/></li><li class="mbtrmini"><span class="pl">添加了<a href="/subject/3836809/" onclick="moreurl(this,{from:'mb-271817222'})" >我们的情歌</a>、<a href="/subject/3711955/" onclick="moreurl(this,{from:'mb-271814887'})" >El Radio</a>、<a href="/subject/4043943/" onclick="moreurl(this,{from:'mb-271812455'})" >Valder Fields 2009北京演唱会</a>等6张专辑</span></li><li style="margin-top:10px;border-bottom:1px solid #ddd;"><span class="pl">1月28日</span></li><li class="mbtrmini"><span class="pl">添加了<a href="/artist/banggang/" onclick="moreurl(this,{from:'mb-270866008'})">Bang Gang</a>、<a href="/artist/Theswellseason/" onclick="moreurl(this,{from:'mb-270865831'})">The Swell Season</a>、<a href="/artist/chrisgarneau/" onclick="moreurl(this,{from:'mb-270865688'})">Chris Garneau</a> 等 5个旗下成员</span><br/></li><li class="mbtrmini"><span class="pl">添加了新歌曲<a href="/label/pocketrecords/?s=32448" onclick="moreurl(this,{from:'mb-270847081'})">If You Want Me</a></span><br/></li></ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="discussions">
+
+
+    
+
+
+    
+        <h2  >口袋唱片的论坛 &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        </h2>
+
+    <table class="olt"><tr><td/><td/><td/><td/></tr>
+        
+        <tr>
+            <td><a href="/label/pocketrecords/discussion/21777534/" title="鼓楼东大街Music station代理口袋所有唱片">鼓楼东大街Music station代理口袋所有唱片</a></td>
+            <td class="pl">来自<a href="/people/Shashouw/">Music station</a></td>
+            <td class="pl" nowrap="nowrap">
+                1 回应
+            </td>
+            <td class="pl">2010-01-31</td>
+        </tr>
+    </table>
+
+<span class="rr">
+<span class="pl">&gt;</span> <a class="j a_click_tip" href="javascript:;">在论坛发言</a>
+<div class="blocktip">
+    <div class="blocktop_content artist_tip">
+        <div>只有关注口袋唱片，才能在论坛发言，请先关注。</div>
+        <input type="button" class="hideme" value="知道了"/>
+    </div>
+</div>
+</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="artists">
+
+
+
+
+
+    
+        <h2  >口袋唱片的旗下成员（12） &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        <span class="pl">( <a href="artists">全部</a> )</span></h2>
+
+        <div class="clearfix">
+        
+<style>
+.photoin{margin-bottom:1em}
+</style>
+<div class="photoin">
+<a class="artist_photo" href="/artist/Tamas/">
+<img height="100" width="100" class="artist_s" alt="Tamas Wells" src="http://t.douban.com/icon/us100975-11.jpg"/></a>
+<div style="width: 100%;" class="ll"><a href="/artist/Tamas/">Tamas Wells</a>
+
+<div class="pl">(21257人关注)</div>
+</div></div>
+<div class="photoin">
+<a class="artist_photo" href="/artist/Maximilian/">
+<img height="100" width="100" class="artist_s" alt="麦斯米兰" src="http://t.douban.com/icon/us101242-10.jpg"/></a>
+<div style="width: 100%;" class="ll"><a href="/artist/Maximilian/">麦斯米兰</a>
+
+<div class="pl">(19577人关注)</div>
+</div></div>
+<div class="photoin">
+<a class="artist_photo" href="/artist/chrisgarneau/">
+<img height="100" width="100" class="artist_s" alt="Chris Garneau" src="http://t.douban.com/icon/us101342-10.jpg"/></a>
+<div style="width: 100%;" class="ll"><a href="/artist/chrisgarneau/">Chris Garneau</a>
+
+<div class="pl">(5428人关注)</div>
+</div></div>
+<div class="photoin">
+<a class="artist_photo" href="/artist/Theswellseason/">
+<img height="100" width="100" class="artist_s" alt="The Swell Season" src="http://t.douban.com/icon/us103815-1.jpg"/></a>
+<div style="width: 100%;" class="ll"><a href="/artist/Theswellseason/">The Swell Season</a>
+
+<div class="pl">(2668人关注)</div>
+</div></div>
+
+        </div>
+
+</div>
+
+
+
+
+</div>
+        <div class="aside">
+            
+
+
+
+
+
+
+
+<div class="" id="">
+
+
+
+
+
+    
+        <h2  >关注口袋唱片的成员 (1106) &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        <span class="pl">( <a href="/label/pocketrecords/fans">全部</a> )</span></h2>
+
+<dl class="obu" ><dt><a href="/people/aka/" class="nbg"><img src="http://t.douban.com/icon/u1057620-37.jpg" class="m_sub_img" alt="胖胖的大头鱼"/></a></dt>
+                    <dd><a href="/people/aka/">胖胖的大头鱼</a></dd></dl><dl class="obu" ><dt><a href="/people/33797958/" class="nbg"><img src="http://t.douban.com/icon/u33797958-2.jpg" class="m_sub_img" alt="深锦。"/></a></dt>
+                    <dd><a href="/people/33797958/">深锦。</a></dd></dl><dl class="obu" ><dt><a href="/people/2630109/" class="nbg"><img src="http://t.douban.com/icon/u2630109-69.jpg" class="m_sub_img" alt="人骨朵儿"/></a></dt>
+                    <dd><a href="/people/2630109/">人骨朵儿</a></dd></dl><dl class="obu" ><dt><a href="/people/L.Q/" class="nbg"><img src="http://t.douban.com/icon/u2966490-2.jpg" class="m_sub_img" alt="Lao Qian"/></a></dt>
+                    <dd><a href="/people/L.Q/">Lao Qian</a></dd></dl><dl class="obu" ><dt><a href="/people/33023426/" class="nbg"><img src="http://t.douban.com/icon/u33023426-2.jpg" class="m_sub_img" alt="暗角"/></a></dt>
+                    <dd><a href="/people/33023426/">暗角</a></dd></dl><dl class="obu" ><dt><a href="/people/33308585/" class="nbg"><img src="http://t.douban.com/icon/u33308585-4.jpg" class="m_sub_img" alt="提着裤子咆哮你"/></a></dt>
+                    <dd><a href="/people/33308585/">提着裤子咆哮你</a></dd></dl><dl class="obu" ><dt><a href="/people/a_KaNO/" class="nbg"><img src="http://t.douban.com/icon/u3479230-3.jpg" class="m_sub_img" alt="老太"/></a></dt>
+                    <dd><a href="/people/a_KaNO/">老太</a></dd></dl><dl class="obu" ><dt><a href="/people/33940335/" class="nbg"><img src="http://t.douban.com/icon/u33940335-2.jpg" class="m_sub_img" alt="你好，我是马甲"/></a></dt>
+                    <dd><a href="/people/33940335/">你好，我是马甲</a></dd></dl><br clear="all"/>
+    
+
+</div>
+
+
+<div id="right_layout">
+
+
+
+
+
+
+
+
+
+<div class="" id="bulletin">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="event">
+
+
+
+
+
+    
+        <h2  >口袋唱片的同城活动 &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        <span class="pl">( <a href="/label/pocketrecords/events">全部</a> )</span></h2>
+
+
+<div class="evt_short"><ul><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805574/">2010年熊宝贝乐团内地巡演 上海站</a><br/>
+        时间：2月22日 周一 － 3月19日 周五<br/>
+        地点：上海 长宁区 MAO LIVEHOUSE SHANGHAI（长宁区淮海西路570号32栋红坊内）<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        273人参加 595人感兴趣
+        </div>
+        <br class="clear" /></li><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805581/">2010年熊宝贝乐团内地巡演 杭州站</a><br/>
+        时间：2月21日 周日 － 3月20日 周六<br/>
+        地点：杭州 西湖区 旅行者酒吧(曙光路176号)<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        134人参加 212人感兴趣
+        </div>
+        <br class="clear" /></li><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805554/">2010年熊宝贝乐团内地巡演 北京站</a><br/>
+        时间：2月22日 周一 － 3月21日 周日<br/>
+        地点：北京 东城区 MAO LIVE HOUSE<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        225人参加 546人感兴趣
+        </div>
+        <br class="clear" /></li><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805604/">2010年熊宝贝乐团内地巡演 武汉站</a><br/>
+        时间：2月24日 周三 － 3月23日 周二<br/>
+        地点：武汉 洪山区 Vox Livehouse（鲁巷鲁磨路118号国光大厦B座，曹家湾车站对面光大银行旁）<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        146人参加 215人感兴趣
+        </div>
+        <br class="clear" /></li><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805624/">2010年熊宝贝乐团内地巡演 成都站</a><br/>
+        时间：2月25日 周四 － 3月24日 周三<br/>
+        地点：成都 武侯区 小酒馆（永丰路47号丰尚玉林商务港1楼）<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        147人参加 322人感兴趣
+        </div>
+        <br class="clear" /></li><li class="actfromfri">
+        <div class="pl">
+        <a class="pl2" href="/event/10805614/">[3月26日]2010年熊宝贝乐团内地巡演 重庆站</a><br/>
+        时间：3月26日 周五 20:30 － 22:00<br/>
+        地点：重庆 沙坪坝区 坚果俱乐部(沙中路重大科技园一楼)<br/>
+        发起人：<a href="/people/3562015/">声演坊客服</a> <br/>
+        245人参加 494人感兴趣
+        </div>
+        <br class="clear" /></li></ul></div><div class="clear"></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="online">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="subject">
+
+
+
+
+
+    
+        <h2  >口袋唱片的专辑 (34) &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        <span class="pl">( <a href="subjects">全部</a> )</span></h2>
+
+<dl class="obs"><dt><a href="/subject/3836809/" title="胡椒月亮... - 我们的情歌"><img src="http://t.douban.com/spic/s3963231.jpg" class="m_sub_img" alt="胡椒月亮... - 我们的情歌"/></a></dt><dd><a title="我们的情歌" href="/subject/3836809/" >我们的情歌</a></dd></dl><dl class="obs"><dt><a href="/subject/3711955/" title="Chris Garneau - El Radio"><img src="http://t.douban.com/spic/s3803773.jpg" class="m_sub_img" alt="Chris Garneau - El Radio"/></a></dt><dd><a title="El Radio" href="/subject/3711955/" >El Radio</a></dd></dl><dl class="obs"><dt><a href="/subject/4043943/" title="Tamas Wells - Valder Fields 2009北京演唱会"><img src="http://t.douban.com/spic/s3984994.jpg" class="m_sub_img" alt="Tamas Wells - Valder Fields 2009北京演唱会"/></a></dt><dd><a title="Valder Fields 2009北京演唱会" href="/subject/4043943/" >Valder Fields 2009北京演...</a></dd></dl><dl class="obs"><dt><a href="/subject/4036719/" title="吴雪颖 - Ecke的角落"><img src="http://t.douban.com/spic/s3979971.jpg" class="m_sub_img" alt="吴雪颖 - Ecke的角落"/></a></dt><dd><a title="Ecke的角落" href="/subject/4036719/" >Ecke的角落</a></dd></dl><dl class="obs"><dt><a href="/subject/4113634/" title="杨千墀 - 杨千墀"><img src="http://t.douban.com/spic/s4036313.jpg" class="m_sub_img" alt="杨千墀 - 杨千墀"/></a></dt><dd><a title="杨千墀" href="/subject/4113634/" >杨千墀</a></dd></dl><dl class="obs"><dt><a href="/subject/2267400/" title="My Little Airport - 我们在炎热与抑郁的夏天，无法停止抽烟"><img src="http://t.douban.com/spic/s2722802.jpg" class="m_sub_img" alt="My Little Airport - 我们在炎热与抑郁的夏天，无法停止抽烟"/></a></dt><dd><a title="我们在炎热与抑郁的夏天，无法停止抽烟" href="/subject/2267400/" >我们在炎热与抑郁的夏天，...</a></dd></dl>
+<br class="clear"/>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="" id="board">
+
+
+
+
+
+    
+        <h2  >口袋唱片的留言板 &nbsp; &middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;
+        <span class="pl">( <a href="/label/pocketrecords/board">全部</a> )</span></h2>
+
+<ul class="mbt"><li class="mbtl"><a href="/people/30314566/"><img src="http://t.douban.com/icon/u30314566-6.jpg" alt="蟲蟲。"/></a></li>
+        <li class="mbtrdot"><a href="/people/30314566/">蟲蟲。</a>: &nbsp; 喜欢喜欢~~ &nbsp; &nbsp; <span class="pl">01-30 11:05</span>
+        </li><li class="mbtl"><a href="/people/gudongnie/"><img src="http://t.douban.com/icon/u2854132-12.jpg" alt="咕咚经济学小组"/></a></li>
+        <li class="mbtrdot"><a href="/people/gudongnie/">咕咚经济学小组</a>: &nbsp; 难道有人认为口袋是摇滚乐？不至于吧…… &nbsp; &nbsp; <span class="pl">01-28 15:10</span>
+        </li><li class="mbtl"><a href="/people/4253962/"><img src="http://t.douban.com/icon/u4253962-4.jpg" alt="soap"/></a></li>
+        <li class="mbtrdot"><a href="/people/4253962/">soap</a>: &nbsp; ~~~~~~~~~~~ &nbsp; &nbsp; <span class="pl">01-28 12:32</span>
+        </li><li class="mbtl"><a href="/people/gudongnie/"><img src="http://t.douban.com/icon/u2854132-12.jpg" alt="咕咚经济学小组"/></a></li>
+        <li class="mbtrdot"><a href="/people/gudongnie/">咕咚经济学小组</a>: &nbsp; 跟谁都没关系不错！
+初学吉他的女生可以试试…… &nbsp; &nbsp; <span class="pl">01-26 22:37</span>
+        </li><li class="mbtl"><a href="/people/gudongnie/"><img src="http://t.douban.com/icon/u2854132-12.jpg" alt="咕咚经济学小组"/></a></li>
+        <li class="mbtrdot"><a href="/people/gudongnie/">咕咚经济学小组</a>: &nbsp; 音乐万花筒！ &nbsp; &nbsp; <span class="pl">01-26 22:26</span>
+        </li><li class="mbtl"><a href="/people/27695937/"><img src="http://t.douban.com/icon/u27695937-2.jpg" alt="哆哆咯"/></a></li>
+        <li class="mbtrdot"><a href="/people/27695937/">哆哆咯</a>: &nbsp; 就是喜欢~~~ &nbsp; &nbsp; <span class="pl">01-24 10:59</span>
+        </li></ul>
+<span class="rr">
+<span class="pl">&gt;</span> <a class="j a_click_tip" href="javascript:;">留言</a>
+<div class="blocktip">
+    <div class="blocktop_content artist_tip">
+        <div>只有关注口袋唱片，才能留言，请先关注。</div>
+        <input type="button" class="hideme" value="知道了"/>
+    </div>
+</div>
+</span>
+
+</div>
+
+
+
+</div>
+
+
+        </div>
+        <div class="extra">
+            
+        </div>
+    </div>
+    </div>
+
+        
+    <div id="footer">
+        
+
+<ul class="col-3 clearfix">
+
+
+            
+<li class="first">
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/mine/'})" href="/mine/">我的豆瓣</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/mine/notes'})" href="/mine/notes">日记</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/mine/photos'})" href="/mine/photos">相册</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/mine/discussions'})" href="/mine/discussions">评论和讨论</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/mine/board'})" href="/mine/board">留言板</a>
+</li>
+
+            
+<li>
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/book/'})" href="/book/">读书</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/book/review/best/'})" href="/book/review/best/">热评</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/book/chart'})" href="/book/chart">排行榜</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/book/browse'})" href="/book/browse">分类浏览</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/book/mine'})" href="/book/mine">我读</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/book/recommended'})" href="/book/recommended">豆瓣猜</a>
+</li>
+
+            
+<li class="last">
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/music/'})" href="/music/">音乐</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/artists/'})" href="/artists/">音乐人</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/music/review/best/'})" href="/music/review/best/">热评</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/music/chart'})" href="/music/chart">排行榜</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/music/tag/'})" href="/music/tag/">分类浏览</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/music/mine'})" href="/music/mine">我的音乐</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/music/recommended'})" href="/music/recommended">豆瓣猜</a>
+</li>
+
+            
+<li class="first">
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/contacts/'})" href="/contacts/">友邻广播</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/contacts/listfriends'})" href="/contacts/listfriends">我的朋友</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/contacts/list'})" href="/contacts/list">我关注的人</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/contacts/find'})" href="/contacts/find">找朋友</a>
+</li>
+
+            
+<li>
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/movie/'})" href="/movie/">电影</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/review/best/'})" href="/movie/review/best/">热评</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/chart'})" href="/movie/chart">排行榜</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/tag/'})" href="/movie/tag/">分类浏览</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/tv/'})" href="/movie/tv/">电视剧</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/mine/'})" href="/movie/mine/">我看</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/movie/recommended/'})" href="/movie/recommended/">豆瓣猜</a>
+</li>
+
+            
+<li class="last">
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/event/'})" href="/event/">同城</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/hosts/'})" href="/hosts/">主办方</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/location/world/'})" href="/location/world/">其他城市</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/online/'})" href="/online/">线上活动</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/event/mine'})" href="/event/mine">我的同城</a>
+</li>
+
+            
+<li class="first">
+     <span class="blue-link"><a onclick="moreurl(this, {sitemap:'/group/'})" href="/group/">小组首页</a></span>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/group/mine'})" href="/group/mine">我的小组</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/group/my_topics'})" href="/group/my_topics">我的发言</a>&nbsp;-&nbsp;<a onclick="moreurl(this, {sitemap:'/group/discover'})" href="/group/discover">更多小组</a>
+</li>
+
+</ul>
+
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2010 douban.com, all rights reserved
+</span>
+<span class="fright">
+    <a href="/about">关于豆瓣</a>
+     · <a href="/about?topic=contactus">联系我们</a>
+     · <a href="/about?policy=disclaimer">免责声明</a>
+     · <a href="/help/">帮助中心</a>
+     · <a href="/service/">豆瓣服务(API)</a>
+     · <a href="/mobile/">手机豆瓣</a>
+     · <a href="/partner/">品牌合作</a>
+</span>
+
+
+
+
+
+    </div>
+
+    </div>
+    
+    
+    
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'yodao', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setVar', '117']);
+
+
+(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})();
+</script>
+
+
+
+
+<script type="text/javascript">
+
+
+/*
+(function(){
+ var hd = document.getElementsByTagName('head')[0],
+ script = document.createElement('script');
+script.src = 'http://localhost/~kejun/debugExternalCss.js';
+script.type = 'text/javascript';
+script.charset = 'utf-8';
+hd.appendChild(script);	
+})();
+
+*/
+
+
+
+
+(function(){
+	var d = document, 
+	    css = [], 
+	    i = 0, l, url,
+	    popup,
+	    txtUpdate = 'update!',
+	    txtMin = '<',
+	    txtMax = '>',
+	    txtReplace = '替换为：',
+	    cssUpdate = 'debugcss-update',
+	    cssMin = 'debugcss-min',
+	    cssMax = 'debugcss-max',
+	    maxWidth = '400px',
+	    maxHeight = 'auto',
+	    minWidth = '30px',
+	    minHeight = '10px',
+	    domRoot = 'debugcss-overlay',
+	    domHd = 'debugcss-hd',
+	    domBd = 'debugcss-bd',
+	    contCss = 'position:fixed;*position:absolute;width:' + maxWidth + ';top:1px;left:1px;padding:10px;background:#fff;border:1px solid #ccc;-moz-box-shadow:10px 10px 10px #999;-webkit-box-shadow:5px 5px 10px #999;text-align:left;font:12px/1.5 arial,sans-serif;';
+	    bnCss = 'border:1px solid #96CFB6;padding:2px 10px;font-size:12px;line-height:1;',
+	    htmltmpl = '<div id="' + domRoot + '" style="' + contCss + '"><div id="' + domHd + '"><a href="#min" style="' + bnCss + 'position:absolute;right:2px;top:2px;" class="' + cssMin + '">' + txtMin + '</a></div><div id="' + domBd + '">{$BODY}</div></div>',
+	    htmlstr = [],
+	    links = d.getElementsByTagName('link'),
+	
+	    updateCSS = function (newUrl, index) {
+		   if (!css || newUrl === ''){
+			return;
+		   }
+		   css[index].setAttribute('href', newUrl.indexOf('?') > 0 ? newUrl + '&rnd=' + Math.random() : newUrl + '?rnd=' + Math.random());
+	    },
+	
+	    getTarget = function (e) {
+		  var ev = e || window.event;
+		  return ev.target || ev.srcElement;
+	    },
+	
+	    stopEvent = function (e) {
+		  if (e.preventDefault && e.stopPropagation) {
+			e.preventDefault();
+			e.stopPropagation();
+		  } else {
+			e.cancelBubble = true;
+			e.returnValue = false;
+		  }
+	    },
+	
+	    addListener = function (node, type, fn) {
+		  if (node.addEventListener) {
+			node.addEventListener(type, fn, false);
+		  } else if (node.attachEvent) {
+			node.attachEvent('on' + type, fn);
+		  }
+	    };
+	
+	if (document.getElementById(domRoot)){
+		return;
+	}
+	
+	// collection links.
+	for (; l = links[i++];) {
+		if (l.getAttribute('rel') === 'stylesheet') {
+			css.push(l);
+		}
+	}
+	
+	// init popup.
+	if (!css[0]) {
+		return;
+	}
+	
+	for (i=0; l = css[i++];){
+		url = l.getAttribute('href');
+		htmlstr.push('<li><a href="' + url + '" target="_blank">' + url + '</a> ' + txtReplace + ' <input type="text" size="50"><a href="#' + (i - 1) + '" style="' + bnCss + '" class="' + cssUpdate + '">' + txtUpdate + '</a></li>');
+	}
+	
+	// create popup.
+	popup = document.createElement('div');
+	popup.innerHTML = htmltmpl.replace('{$BODY}', '<ul>' + htmlstr.join('') + '</ul>');
+	document.body.appendChild(popup.cloneNode(true));
+	
+	
+	// bind event.
+	addListener(document.getElementById(domRoot), 'click', function (e) {
+		var el = getTarget(e), action = {}, cn = el.getAttribute('class');
+		
+		action[cssUpdate] = function(el) {
+           updateCSS(el.parentNode.getElementsByTagName('input')[0].value.replace(/^\s+|\s+$/g, ''), 0|el.getAttribute('href').split('#')[1]);
+		};
+		
+		action[cssMin] = function(el) {
+           el.setAttribute('class', cssMax);
+           el.innerHTML = txtMax;
+           var bd = document.getElementById(domBd),
+           root = document.getElementById(domRoot);
+           bd.style.visibility = 'hidden';
+           root.style.width = minWidth;
+           root.style.height = minHeight;
+		};
+
+		action[cssMax] = function(el) {
+           el.setAttribute('class', cssMin);
+           el.innerHTML = txtMin;
+           var bd = document.getElementById(domBd),
+           root = document.getElementById(domRoot);
+           bd.style.visibility = 'visible';
+           root.style.width = maxWidth;
+           root.style.height = maxHeight;
+		};
+				
+		if (cn) {
+			stopEvent(e);
+			action[cn] && action[cn](el);
+            return;
+		}
+	});
+	
+	
+	// move it.
+})();
+	
+</script>
+
+
+    <!-- legolas-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
