@@ -1,13 +1,9 @@
 (function(){
-	var d = document, 
-	    css = [], 
-	    i = 0, l, 
-	    url, 
-	    js, 
-	    root,
+	var css = [], 
+	    i = 0, l, url, js, root,
 	    evt, dom, util, loader,
 	    pos = [1, 0],
-	    popup,
+	    popup,links,
 	    txtUpdate = 'update!',
 	    txtMin = '&lt;',
 	    txtMax = '&gt;',
@@ -29,7 +25,6 @@
 	    htmlstr = [],
 	    libBase = 'http://ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/',
 	    coreLib = libBase + 'yuiloader-dom-event/yuiloader-dom-event.js',
-	    links = d.getElementsByTagName('link'),
 	    
 	    // update css file.
 	    updateCSS = function (newUrl, index) {
@@ -52,6 +47,7 @@
 			  util = YAHOO.util;
 			  evt = util.Event;
 			  dom = util.Dom;
+			  links = document.getElementsByTagName('link');
 			  init();
 		    }
 		}
