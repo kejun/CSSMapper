@@ -9,8 +9,8 @@ h2. 介绍
 h2. 使用
 
 添加下面代码到书签中：
-<pre>
+<pre><code>
 javascript:(function(){var hd=document.getElementsByTagName('head')[0],script=document.createElement('script');script.src='http://hikejun.com/demo/debugExternalCss.js';script.type='text/javascript';script.charset='utf-8';hd.appendChild(script);})();
-</pre>
+</code></pre>
 
 线上的css文件可以对应映射到本地的css文件上进行调试。修改后，点“update!”实时查看修改效果。
