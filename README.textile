@@ -9,6 +9,7 @@ h2. 介绍
 h2. 使用
 
 添加下面代码到书签中：
+
 <pre class="console"><code>
 javascript:(function(){var hd=document.getElementsByTagName('head')[0],script=document.createElement('script');script.src='http://hikejun.com/demo/debugExternalCss.js';script.type='text/javascript';script.charset='utf-8';hd.appendChild(script);})();
 </code></pre>
