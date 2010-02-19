@@ -1,13 +1,15 @@
 h1. CSSMapper
 
 h2. 介绍
+
 外部的css通常被压缩，调试起来比较麻烦，通常存到本地调试。利用这个小书签工具可以直接映射到本地的源文件上修改。
+
 不用刷新页面，只需"update!"相应的CSS文件。配合Firebug实时调整HTML，很方便。
 
 h2. 使用
 
 添加下面代码到书签中：
-<pre class="console">
+<pre>
 javascript:(function(){var hd=document.getElementsByTagName('head')[0],script=document.createElement('script');script.src='http://hikejun.com/demo/debugExternalCss.js';script.type='text/javascript';script.charset='utf-8';hd.appendChild(script);})();
 </pre>
 
